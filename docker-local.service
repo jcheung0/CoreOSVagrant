@@ -1,0 +1,10 @@
+[Unit]
+Description=docker local
+
+[Service]
+PermissionsStartOnly=true
+ExecStartPre=/usr/bin/systemctl kill docker.service
+ExecStart=/usr/bin/docker -d
+
+[Install]
+WantedBy=local.target
